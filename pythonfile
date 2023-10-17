@@ -1,0 +1,11 @@
+def calculate_death_certificate_gaps():
+    properties = Prop.query.filter_by(archive='c').all()
+    gap_count = 0
+
+    for prop in properties:
+        # Check if there is no death certificate for the property
+        death_certificates = Death_certificate.query.filter_by(property_id=prop.property_id).all()
+        if not death_certificates:
+            gap_count += 1
+
+    return gap_count
