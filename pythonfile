@@ -9,3 +9,5 @@ def calculate_death_certificate_gaps():
             gap_count += 1
 
     return gap_count
+
+def calculate
